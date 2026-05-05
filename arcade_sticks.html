@@ -11,17 +11,28 @@
 <div id="menu-placeholder"></div>
 
 <script>
-fetch("menu.html")
+  fetch("menu.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("menu-placeholder").innerHTML = data;
   });
+  fetch("stl_display.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("stl-display-placeholder").innerHTML = data;
+  });
 </script>
+
 
 <body>
     <h1>Arcade Stick Designs</h1>
     <p>"lorem ipsum dolor sit amet"</p>
-    
+    <script type="module" src="/main.js"></script>
+    <script type="module">
+    import { loadObject } from './main.js';
+    loadObject("./stls/Turntable Movement Panel.stl");
+    </script>
+
 
 </body>
 </html>
